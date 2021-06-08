@@ -3,7 +3,7 @@ from encoder_model import Encoder
 
 class LoanGrader(tf.keras.Model):
 
-    def __init__(self, num_encoder_layer, d_model, num_heads, dff, max_positional_encoding=34, input_dims=85267,  rate=0.1, **kwargs):
+    def __init__(self, num_encoder_layer, d_model, num_heads, dff, max_positional_encoding=24, input_dims=84597,  rate=0.1, **kwargs):
         super(LoanGrader, self).__init__(**kwargs)
 
         self.encoder= Encoder(num_encoder_layer, d_model, num_heads, dff, input_dims, max_positional_encoding, rate=rate )
