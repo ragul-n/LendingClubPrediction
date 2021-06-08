@@ -1,5 +1,7 @@
+import numpy as np
 import tensorflow as tf
 from encoder_model import Encoder
+
 
 class LoanGrader(tf.keras.Model):
 
