@@ -2,7 +2,8 @@ import numpy as np
 import tensorflow as tf
 from encoder_model import Encoder
 from encoder_model import create_padding_mask
-
+from IPython.display import display
+import time
 
 class LoanGrader(tf.keras.Model):
 
