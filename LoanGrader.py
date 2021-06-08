@@ -122,15 +122,13 @@ class LoanGrader(tf.keras.Model):
             return loss_val, y_pred
 
     @tf.function
-    def evaluate(self, test_data, return_loss=False):
+    def evaluate(self, test_data, return_loss=True):
         test_loss= tf.keras.metrics.Mean()
-        test_accuraccy=tf.keras.metrics.SparseCategoricalAccuracy()
+        test_accuracy=tf.keras.metrics.SparseCategoricalAccuracy()
         for x, sequence, y in test_data:
 
             y_pred= self.call(x, sequence, training=False)
             
-            
-
             test_accuracy.update_state(y, y_pred)
             test_loss.update_state(self.loss(y, y_pred, class_weights=self.class_weights))
 
