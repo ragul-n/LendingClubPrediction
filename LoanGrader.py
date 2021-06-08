@@ -1,6 +1,7 @@
 import numpy as np
 import tensorflow as tf
 from encoder_model import Encoder
+from encoder_model import create_padding_mask
 
 
 class LoanGrader(tf.keras.Model):
