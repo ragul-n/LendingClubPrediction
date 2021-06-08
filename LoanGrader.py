@@ -49,7 +49,7 @@ class LoanGrader(tf.keras.Model):
         x= self.encoder(sequence, mask=mask)
         x= self.flatten(x)
         
-        X=tf.keras.utils.normalize(X)
+        
         x= self.cancat([x, X])
 
         x= self.dense1(x)
