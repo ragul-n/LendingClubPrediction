@@ -47,8 +47,8 @@ class LoanGrader(tf.keras.Model):
         mask= create_padding_mask(sequence)
         x= self.encoder(sequence, mask=mask)
         x= self.flatten(x)
-
-        X=self.batch_normalization(X, training=training)
+        
+        X=tf.keras.utils.normalize(X)
         x= self.cancat([x, X])
 
         x= self.dense1(x)
