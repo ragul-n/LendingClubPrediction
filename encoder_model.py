@@ -2,6 +2,7 @@
 #Link: https://www.tensorflow.org/text/tutorials/transformer
 
 import tensorflow as tf
+import numpy as np
 
 #Positional Encoding
 def get_angles(pos, i, d_model):
