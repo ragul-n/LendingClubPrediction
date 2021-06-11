@@ -132,7 +132,7 @@ class LoanGrader(tf.keras.Model):
             test_accuracy.update_state(y, y_pred)
             test_loss.update_state(self.loss(y, y_pred, class_weights=self.class_weights))
 
-        if retrun_loss :
+        if return_loss :
             return test_accuracy.results(), test_loss.results()
         else:
             return test_accuracy.results()
