@@ -23,7 +23,7 @@ class LoanGrader(tf.keras.Model):
         self.dense4=tf.keras.layers.Dense(32, activation='relu')
         self.dense5= tf.keras.layers.Dense(7, activation='softmax')
 
-        self.class_weights=None
+        self.class_weights=[1,1,1,1,1,1,1]
 
        
         self.optimizer= None
@@ -121,7 +121,7 @@ class LoanGrader(tf.keras.Model):
             
             return loss_val, y_pred
 
-    @tf.function
+    
     def evaluate(self, test_data, return_loss=True):
         test_loss= tf.keras.metrics.Mean()
         test_accuracy=tf.keras.metrics.SparseCategoricalAccuracy()
@@ -213,7 +213,3 @@ class LoanGrader(tf.keras.Model):
 
             self.training_history['validation_loss'].append(val_loss.result())
             self.training_history['validation_accuracy'].append(val_accuracy.result())
-
-
-
-
